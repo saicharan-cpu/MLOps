@@ -6,7 +6,7 @@
 ---
 
 ## Overview
-I have modified the lab assignment to use a wine dataset with wine data model and wine data response.
+I have modified the lab assignment to use a wine dataset with wine data model and wine data response. I have also added a third endpoint called 'predict_wine_quality'.
 
 In this Lab, we will learn how to expose ML models as APIs using [FastAPI](https://fastapi.tiangolo.com/) and [uvicorn](https://www.uvicorn.org/).
 1. **FastAPI**: FastAPI is a modern, fast (high-performance), web framework for building APIs with Python based on standard Python type hints.
