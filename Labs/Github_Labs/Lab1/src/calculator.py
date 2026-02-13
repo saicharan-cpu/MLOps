@@ -1,65 +1,97 @@
-def fun1(x, y):
+# calculator.py
+def add(a, b):
     """
-    Adds two numbers together.
+    Returns the sum of two numbers.
+
     Args:
-        x (int/float): First number.
-        y (int/float): Second number.
-    Returns:
-        int/float: Sum of x and y.
-        Raises:
-        ValueError: If x or y is not a number.
-    """
-    if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
-        raise ValueError("Both inputs must be numbers.")
-    
-    return x + y
+        a (int/float): First operand.
+        b (int/float): Second operand.
 
-def fun2(x, y):
+    Returns:
+        int/float: Sum of a and b.
+
+    Raises:
+        TypeError: If either argument is not a number.
     """
-    Subtracts two numbers.
+    if not (isinstance(a, (int, float)) and isinstance(b, (int, float))):
+        raise TypeError("Both arguments must be numeric types.")
+    return a + b
+
+
+def subtract(a, b):
+    """
+    Returns the difference between two numbers.
+
     Args:
-        x (int/float): First number.
-        y (int/float): Second number.
-    Returns:
-        int/float: Difference of x and y.
-        Raises:
-        ValueError: If x or y is not a number.
-    """
-    if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
-        raise ValueError("Both inputs must be numbers.")
-    return x - y
+        a (int/float): Minuend.
+        b (int/float): Subtrahend.
 
-def fun3(x, y):
+    Returns:
+        int/float: Result of a - b.
+
+    Raises:
+        TypeError: If either argument is not a number.
     """
-    Multiplies two numbers together.
+    if not (isinstance(a, (int, float)) and isinstance(b, (int, float))):
+        raise TypeError("Both arguments must be numeric types.")
+    return a - b
+
+
+def multiply(a, b):
+    """
+    Returns the product of two numbers.
+
     Args:
-        x (int/float): First number.
-        y (int/float): Second number.
-    Returns:
-        int/float: Product of x and y.
-        Raises:
-        ValueError: If either x or y is not a number.
-    """
-    if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
-        raise ValueError("Both inputs must be numbers.")
-    return x * y
+        a (int/float): First factor.
+        b (int/float): Second factor.
 
-def fun4(x,k,z):
+    Returns:
+        int/float: Product of a and b.
+
+    Raises:
+        TypeError: If either argument is not a number.
     """
-    Adds three numbers together.
+    if not (isinstance(a, (int, float)) and isinstance(b, (int, float))):
+        raise TypeError("Both arguments must be numeric types.")
+    return a * b
+
+
+def divide(a, b):
+    """
+    Returns the quotient of two numbers.
+
     Args:
-        x (int/float): First number.
-        k (int/float): Second number.
-        z (int/float): Third number.
+        a (int/float): Dividend.
+        b (int/float): Divisor.
+
     Returns:
-        int/float: Sum of x, y and z.
+        float: Result of a / b.
+
+    Raises:
+        TypeError: If either argument is not a number.
+        ZeroDivisionError: If divisor is zero.
     """
-    total_sum = x + k + z
-    return total_sum
+    if not (isinstance(a, (int, float)) and isinstance(b, (int, float))):
+        raise TypeError("Both arguments must be numeric types.")
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return a / b
 
 
-# f1_op = fun1(2,3)
-# f2_op = fun2(2,3)
-# f3_op = fun3(2,3)
-# f4_op = fun4(f1_op,f2_op,f3_op)
+def power(base, exponent):
+    """
+    Raises a number to a given power.
 
+    Args:
+        base (int/float): The base number.
+        exponent (int/float): The exponent.
+
+    Returns:
+        int/float: Result of base^exponent.
+
+    Raises:
+        TypeError: If either argument is not a number.
+    """
+    if not (isinstance(base, (int, float)) and isinstance(exponent, (int, float))):
+        raise TypeError("Both arguments must be numeric types.")
+    return base ** exponent
