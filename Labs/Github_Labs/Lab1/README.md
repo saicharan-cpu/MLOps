@@ -1,4 +1,3 @@
-# LAB1 - MLOps (IE-7374) 
 
 This lab focuses on 5 modules, which includes creating a virtual environment, creating a GitHub repository, creating Python files, creating test files using pytest and unittest, and implementing GitHub Actions.
 
@@ -20,78 +19,17 @@ To create a virtual environment, follow these steps:
     ```
     lab01\Scripts\activate
     ```
-After activation, you will see the virtual environment's name in your command prompt or terminal, indicating that you are working within the virtual environment.
+    After activation, you will see the virtual environment's name in your command prompt or terminal, indicating that you are working within the virtual environment.
+   
+4. Each file that is the tests and calculator can be run by opening the project in pycharm and running them individually.
 
-
-## Step 2: Creating a GitHub Repository, Cloning and Folder Structure
-Now that we have set up our virtual environment, the next step is to create a GitHub repository for our project and establish a structured folder layout. This organization helps maintain your project's code, data, and tests in an organized manner.
-
-### Fork the Repository: 
-Click the "Fork" button at the top right of this [repository](https://github.com/raminmohammadi/MLOps/) to create your own copy.
-
-### Creating a GitHub Repository
-- Open a web browser and go to GitHub.
-- In the upper right corner, click the "+" button and select "New repository."
-- Choose a name for your repository.
-- Choose the visibility of your repository—either public (visible to everyone) or private (accessible only to selected collaborators)
-- Check the "Initialize this repository with a README" box. This will create an initial README file that you can edit to provide project documentation.
-- Click the "Create repository" button.
-
-### Cloning the Repository
-- Open a Command Prompt or Terminal.
-- Navigate to the directory where you want to clone your GitHub repository. This should be the same directory where you created your virtual environment.
-- Run the following command to clone your GitHub repository into the current directory:
-    ```
-    git clone <repository_url>
-    ```
-- Replace <repository_url> with the URL of your GitHub repository. You can find this URL on your GitHub repository's main page.
-After running the command, the repository will be cloned, and you'll have a local copy of your GitHub project in your chosen directory.
-
-### Establishing Folder Structure
-- Once you have cloned yor repository, you can establish a structured folder layout within it. This layout helps organize your project into key directories for code, data, and tests. Create the following subfolders within your repository: <br>
-- data: This folder is used for storing project data files or datasets. <br>
-- src: This folder is where you'll store your project's source code files. <br>
-- test: This folder is dedicated to unit tests and test scripts for your code. <br>
-- Create a file named .gitignore. This is useful to exclude the virtual environment and other unnecessary files from version control.
-- Add the virtual environment folder name inside your gitignore file so that its not tracked by Git.
-
-### Adding and Pushing Your Project Code to GitHub
-Now that we have our virtual environment set up, the GitHub repository created, and the folder structure organized, let's add our project's code and push it to GitHub. 
-
-**Adding Your Project Code** <br>
-- Navigate to your project directory using the Command Prompt or Terminal, where you have the virtual environment and folder structure set up.
-- Create and write your Python code or other project files within the specified directories (src, data, etc.) according to your project requirements.
-- Once your project files are ready, it's time to add them to Git's staging area. In your project directory, run the following command:
-    ```
-    git add .
-    ```
-- This command stages all the changes and new files in your project directory for the next commit.
-
-**Committing Your Changes** <br>
-- After staging your changes, commit them with a meaningful commit message that describes the changes you made. Replace <your_commit_message> with a descriptive message:
-    ```
-    git commit -m "<your_commit_message>"
-    ```
-
-**Pushing to GitHub** <br>
-- To push your committed changes to your GitHub repository, use the following command:
-    ```
-    git push origin main
-    ```
 ## Step 3: Creating calculator.py in src Folder
 - In this step, we create a Python script named calculator.py within the src folder of your project. This script contains a set of mathematical functions designed to perform basic arithmetic operations.
-- fun1(x, y) adds two input numbers, x and y.
-- fun2(x, y) subtracts y from x.
-- fun3(x, y) multiplies x and y.
-- fun4(x, y) combines the results of the above functions and returns their sum.
-- To view the code and gain a deeper understanding, please refer to the calculator.py file located under the src folder in this [link](https://github.com/raminmohammadi/MLOps/blob/main/src/lab1/calculator.py).
-
-> **Note:** <br>
-Whenever you want to push files to your repository follow this step
-[Adding and Pushing Your Project Code to GitHub](#adding-and-pushing-your-project-code-to-github)
-
-## Step 4: Creating tests using Pytest and Unittests
-- In this step, we'll set up unit tests for the functions in our calculator.py script using two popular testing frameworks: [pytest](https://docs.pytest.org/en/7.4.x/) and [unittest](https://docs.python.org/3/library/unittest.html). Unit testing ensures that individual components of your code work as expected, helping you catch and fix bugs early in the development process.
+- add(x, y) adds two input numbers, x and y.
+- substract(x, y) subtracts y from x.
+- multiply(x, y) multiplies x and y.
+- divide(x, y) combines the results of the above functions and returns their sum.
+- power(x, y) exponents x with y.
 
 **Using Pytest** <br>
 - Installation (if not already installed):
@@ -99,29 +37,12 @@ Whenever you want to push files to your repository follow this step
     ```
     pip install pytest
     ```
-### Writing Pytest Tests
-- Pytest makes it easy to write tests for your Python code. Tests are written as regular Python functions, and test file names typically start with test_ or end with _test.py.
-- To run your Pytest tests, you can use the pytest command followed by the name of the test file or directory containing your tests:
-    ```
-    pytest test_sample.py
     ```
 - Pytest automatically discovers test functions based on naming conventions. It searches for functions starting with test_ or ending with _test, and it can discover tests in subdirectories as well. This makes it easy to organize your tests.
 - Pytest supports parametrized tests, which allow you to run the same test function with multiple sets of inputs and expected outputs. This is particularly useful for testing functions with different input scenarios. Please refer the commented out code in the test_pytest.py file for your reference.
 - Let's create a test file named test_pytest.py within the test folder. This file will contain a series of test functions, each aimed at verifying the behavior of specific functions within calculator.py.
 - We've prepared four test functions (test_fun1, test_fun2, test_fun3, and test_fun4) to test the functions within calculator.py. Each test function uses the assert statement to validate the expected outcomes. Refer the file under test folder for your [reference](https://github.com/raminmohammadi/MLOps/blob/main/Github_Labs/Lab1/test/test_pytest.py).
 - By running these pytest tests, you can verify that your calculator functions are working correctly.
-
-### Writing Tests with UnitTest
-- Unittest allows you to write tests as classes that inherit from the unittest.TestCase class. Test methods are identified by their names, which must start with "test_" to be recognized as test cases.
-- To run Unittest tests, you typically execute your test script, which should include a call to unittest.main() at the end. Here's how you can run the tests:
-    ```
-    python test_sample.py
-    ```
-- Unittest relies on test discovery, which means it will find test methods based on naming conventions, similar to Pytest. Test methods must start with "test_" to be recognized as test cases.
-- Unittest provides a variety of assertion methods, such as assertEqual, assertTrue, assertFalse, and others, to check conditions in your tests. You can choose the assertion method that best suits your testing needs.
-- Let's create a test file named test_unittest.py within the test folder. This file will contain a series of test functions, each aimed at verifying the behavior of specific functions within calculator.py.
-- We've prepared four test functions (test_fun1, test_fun2, test_fun3, and test_fun4) to test the functions within calculator.py. Each test function uses the self.assertEqual statement to validate the expected outcomes. Refer the file under test folder for your [reference](https://github.com/raminmohammadi/MLOps/blob/main/Github_Labs/Lab1/test/test_unittest.py).
-- By running these unittest tests, you can verify that your calculator functions are working correctly.
 
 ## Step 5. Implementing GitHub Actions
 - GitHub Actions is a powerful automation and CI/CD (Continuous Integration/Continuous Deployment) platform provided by GitHub. It enables you to automate various workflows and tasks directly within your GitHub repository. GitHub Actions can be used for a wide range of purposes, such as running tests, deploying applications, and automating release processes.
