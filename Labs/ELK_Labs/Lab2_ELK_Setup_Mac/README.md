@@ -1,6 +1,6 @@
 # ELK Stack - ML Training Log Monitor (Wine Dataset)
 
-This lab demonstrates how to monitor machine learning model training using the **ELK Stack** (Elasticsearch, Logstash, Kibana). A Logistic Regression model is trained on the Wine dataset, and all training metrics are captured as structured logs and shipped to Elasticsearch for visualization in Kibana.
+This lab demonstrates how to monitor machine learning model training using the **ELK Stack** (Elasticsearch, Logstash, Kibana). A Logistic Regression model is trained on the Wine dataset, and all training metrics are captured as structured logs and shipped to Elasticsearch for visualization in Kibana. Make sure you have the ELK stack downloaded as per the instructions given prior.
 
 ---
 
